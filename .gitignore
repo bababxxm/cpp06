@@ -1,0 +1,10 @@
+*.o
+*.d
+*.pdf
+.DS_Store
+.DS_Store?
+*.dSYM/
+.vscode/
+.idea/
+*.swp
+*.swo

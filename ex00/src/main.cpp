@@ -6,7 +6,7 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:02:37 by sklaokli          #+#    #+#             */
-/*   Updated: 2026/04/21 19:23:09 by sklaokli         ###   ########.fr       */
+/*   Updated: 2026/04/21 19:27:17 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
 	test_header("TEST 1: Char Literals");
 	test_convert("c");
 	test_convert("a");
-	test_convert("48");  // Should detect as int 0 first, but display char '0'
+	test_convert("48");
 	test_convert("*");
 
 	test_header("TEST 2: Integer Literals");

@@ -10,5 +10,6 @@
 *.swo
 
 a.out
+test
 bin/
 /Makefile

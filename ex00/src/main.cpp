@@ -6,7 +6,7 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:02:37 by sklaokli          #+#    #+#             */
-/*   Updated: 2026/04/21 17:55:53 by sklaokli         ###   ########.fr       */
+/*   Updated: 2026/04/21 19:23:09 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,22 @@
 #define BG_WHITE "\033[47m"
 
 #define UNDERLINE "\033[4m"
-#define REVERSED "\033[7m"  // Swaps foreground and background
-#define DIM "\033[2m"       // Faint text, great for separators
-#define ITALIC "\033[3m"    // (Support varies by terminal)
+#define REVERSED "\033[7m"
+#define DIM "\033[2m"
+#define ITALIC "\033[3m"
 
 template <typename T>
-std::string paint(const char* color, T value) {
+std::string paint(const std::string& color, T value) {
 	std::stringstream ss;
 	ss << color << value << RESET;
 	return ss.str();
 }
 
-void test_header(std::string title) {
+void test_header(const std::string& title) {
 	std::cout << "\n" << paint(B_CYAN, "[" + title + "]") << std::endl;
 }
 
-void test_convert(std::string input) {
+void test_convert(const std::string& input) {
 	std::cout << paint(B_YELLOW, "Input: \"" + input + "\"") << std::endl;
 	ScalarConverter::convert(input);
 	std::cout << paint(DIM, "----------------------------------------") << std::endl;
@@ -67,7 +67,7 @@ void test_convert(std::string input) {
 
 int main(int argc, char** argv) {
 	if (argc > 1) {
-		ScalarConverter::convert(argv[1]);
+		ScalarConverter::convert(std::string(argv[1]));
 		return 0;
 	}
 

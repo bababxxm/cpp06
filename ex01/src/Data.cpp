@@ -14,23 +14,28 @@
 
 Data::Data(void) : _name("Unknown"), _age(0), _value(0.0) {}
 
-Data::Data(const std::string &name, int age, double value)
+Data::Data(const std::string& name, int age, double value)
     : _name(name), _age(age), _value(value) {}
 
-Data::Data(const Data &other)
-    : _name(other._name), _age(other._age), _value(other._value) {}
+Data::Data(const Data& other) : _name(other._name), _age(other._age), _value(other._value) {}
 
-Data &Data::operator=(const Data &other) {
-  if (this != &other) {
-    _name = other._name;
-    _age = other._age;
-    _value = other._value;
-  }
-  return (*this);
+Data& Data::operator=(const Data& other) {
+	if (this != &other) {
+		_name = other._name;
+		_age = other._age;
+		_value = other._value;
+	}
+	return (*this);
 }
 
 Data::~Data(void) {}
 
-std::string Data::getName(void) const { return (_name); }
-int Data::getAge(void) const { return (_age); }
-double Data::getValue(void) const { return (_value); }
+std::string Data::getName(void) const {
+	return (_name);
+}
+int Data::getAge(void) const {
+	return (_age);
+}
+double Data::getValue(void) const {
+	return (_value);
+}

@@ -6,7 +6,7 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 23:50:34 by sklaokli          #+#    #+#             */
-/*   Updated: 2026/04/09 05:40:25 by sklaokli         ###   ########.fr       */
+/*   Updated: 2026/04/10 06:58:21 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Base* generate(void) {
 
 	const int numCreators = sizeof(creators) / sizeof(creators[0]);
 
-	return (creators[std::rand() % numCreators]());
+	return creators[std::rand() % numCreators]();
 }
 
 void identify(Base* p) {

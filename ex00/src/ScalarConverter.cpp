@@ -6,11 +6,24 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 20:39:18 by sklaokli          #+#    #+#             */
-/*   Updated: 2026/04/21 19:25:45 by sklaokli         ###   ########.fr       */
+/*   Updated: 2026/04/22 00:51:16 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter(void) {}
+
+ScalarConverter::ScalarConverter(const ScalarConverter& other) {
+	(void)other;
+}
+
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& other) {
+	(void)other;
+	return (*this);
+}
+
+ScalarConverter::~ScalarConverter(void) {}
 
 static bool isChar(const std::string& str) {
 	return (str.length() == 1 && !std::isdigit(str[0]) && std::isprint(str[0]));
@@ -51,8 +64,8 @@ static std::string formatNumber(double val) {
 	oss << val;
 	std::string s = oss.str();
 
-	if (s != "inf" && s != "-inf" && s != "nan" && s.find('.') == std::string::npos &&
-	    s.find('e') == std::string::npos) {
+	if (s.find("nan") == std::string::npos && s.find("inf") == std::string::npos &&
+	    s.find('.') == std::string::npos && s.find('e') == std::string::npos) {
 		s += ".0";
 	}
 	return (s);

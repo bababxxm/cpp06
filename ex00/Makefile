@@ -6,7 +6,7 @@
 #    By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/22 20:14:20 by sklaokli          #+#    #+#              #
-#    Updated: 2026/04/21 17:58:55 by sklaokli         ###   ########.fr        #
+#    Updated: 2026/04/22 00:18:42 by sklaokli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,10 +44,10 @@ $(NAME): $(OBJ)
 	$(COMPILE) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	@ rm -rfv $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	@ rm -fv $(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 22:31:19 by sklaokli          #+#    #+#             */
-/*   Updated: 2026/04/09 05:31:01 by sklaokli         ###   ########.fr       */
+/*   Updated: 2026/04/22 00:19:25 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define DATA_HPP
 
 #include <iostream>
-
 class Data {
 private:
 	std::string _name;
@@ -22,15 +21,15 @@ private:
 	double _value;
 
 public:
-	Data(void);
-	Data(const std::string& name, int age, double value);
-	Data(const Data& other);
-	Data& operator=(const Data& other);
-	~Data(void);
+	Data();
+	Data(const std::string&, int, double);
+	Data(const Data&);
+	Data& operator=(const Data&);
+	~Data();
 
-	std::string getName(void) const;
-	int getAge(void) const;
-	double getValue(void) const;
+	std::string getName() const;
+	int getAge() const;
+	double getValue() const;
 };
 
 #endif

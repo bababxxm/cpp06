@@ -6,7 +6,7 @@
 /*   By: sklaokli <sklaokli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 18:51:45 by sklaokli          #+#    #+#             */
-/*   Updated: 2026/04/21 19:42:05 by sklaokli         ###   ########.fr       */
+/*   Updated: 2026/04/23 11:00:31 by sklaokli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int main() {
 	std::cout << "Original Address: " << paint(B_YELLOW, &originalData) << std::endl;
 	std::cout << "Original Name:    " << originalData.getName() << std::endl;
 	std::cout << "Original Age:     " << originalData.getAge() << std::endl;
+	std::cout << "Original Value:   " << originalData.getValue() << std::endl;
 
 	std::cout << paint(DIM, "----------------------------------------") << std::endl;
 
@@ -87,21 +88,22 @@ int main() {
 	test_header("TEST 3: Deserialization (uintptr_t -> Ptr)");
 
 	Data* restoredPtr = Serializer::deserialize(raw);
-	std::cout << "restoredPtr Address: " << paint(B_YELLOW, &restoredPtr) << std::endl;
-	std::cout << "restoredPtr Value:   " << paint(B_YELLOW, restoredPtr) << std::endl;
-
-	std::cout << paint(DIM, "----------------------------------------") << std::endl;
-
-	test_header("TEST 4: Verification");
+	std::cout << "restoredPtr Value: " << paint(B_YELLOW, restoredPtr) << std::endl;
+	std::cout << "Original Address:  " << paint(B_YELLOW, &originalData) << std::endl;
 
 	if (restoredPtr == &originalData)
 		std::cout << paint(B_GREEN, "SUCCESS: Pointers match!") << std::endl;
 	else
 		std::cout << paint(B_RED, "FAILURE: Pointers do not match!") << std::endl;
 
+	std::cout << paint(DIM, "----------------------------------------") << std::endl;
+
+	test_header("TEST 4: Verification");
+
 	std::cout << "restoredPtr Address: " << paint(B_YELLOW, &restoredPtr) << std::endl;
-	std::cout << "restoredPtr Name:    " << restoredPtr->getName() << std::endl;
-	std::cout << "restoredPtr Age:     " << restoredPtr->getAge() << std::endl;
+	std::cout << "restoredPtr Name: " << restoredPtr->getName() << std::endl;
+	std::cout << "restoredPtr Age:  " << restoredPtr->getAge() << std::endl;
+	std::cout << "Original Value:   " << originalData.getValue() << std::endl;
 
 	std::cout << paint(DIM, "----------------------------------------") << std::endl;
 
